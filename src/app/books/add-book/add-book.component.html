@@ -1,0 +1,29 @@
+
+<div class = "container" style ="vertical-align: middle; width: 300px;">
+<form (ngSubmit)="onSubmit(f)" #f="ngForm">
+    <div class="form-group">
+      <label for="exampleInputName1">Name:</label>
+      <input type="text" class="form-control" id="exampleInputName1" #name required aria-describedby="nameHelp" placeholder="Enter Name">
+      <span class="help-block" *ngIf = "!name.valid && name.touched">Please enter the valid name</span>
+    </div>
+    <div class="form-group">
+        <label for="exampleInputAuthor1">Author:</label>
+        <input type="text" class="form-control" id="exampleInputAuthor1" aria-describedby="authorHelp" placeholder="Enter Author">
+      </div>
+      <div class="form-group">
+        <label for="exampleInputEmail1">Email address:</label>
+        <input type="email" class="form-control" id="exampleInputEmail1" #email required aria-describedby="emailHelp" placeholder="Enter email">
+        <span class="help-block" *ngIf = "!email.valid && email.touched">Please enter the valid email</span>
+      </div>
+      <div class="form-group">
+        <label for="exampleInputPrice1">Price: </label>
+        <input type="number" class="form-control" id="exampleInputPrice1" #price required aria-describedby="priceHelp" placeholder="Enter Price">
+        <span class="help-block" *ngIf = "!price.valid && price.touched">Please enter the valid price</span>
+      </div>
+    <div class="form-group">
+      <label for="exampleInputComment1">Comments: </label>
+      <input type="text" class="form-control" id="exampleInputComment1" placeholder="Comments">
+    </div>
+    <button type="submit" [disabled]="!f.valid" class="btn btn-primary">Submit</button>
+  </form>
+</div>
